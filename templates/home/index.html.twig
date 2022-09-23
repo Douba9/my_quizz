@@ -1,48 +1,110 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home
+{% endblock %}
 
 {% block body %}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<header>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white">
-    <div class="container-fluid"> 
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-        data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Category</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+		<nav class="navbar navbar-expand-lg navbar-light bg-white">
+			<div class="container-fluid">
+				<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+					<i class="fas fa-bars"></i>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarExample01">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item active">
+							<a class="nav-link" aria-current="page" href="#">Home</a>
+						</li>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-  <div class="p-5 text-center bg-light">
-    <h1 class="mb-3">My QUIZZ</h1>
-    <h4 class="mb-3">Select QUIZZ</h4>
-
-  </div>
+	<div class="p-5 text-center bg-light">
+		<h1 class="mb-3">My QUIZZ</h1>
+	</div>
 </header>
 
-<div class="container">
+<form action="">
 
-      {% for c in category %}
-        <button class="row-sm btn shadow-lg m-1 rounded">
-          {{c}}
-        </button>
-      {% endfor %}
+	<div class="container">
 
-</div>
-{% endblock %}
+		<div class="row">
+			{% for c in category %}
+				<div class="col-5 m-4">
+					{% if c == "Harry Potter" %}
+						<a href="/Harry_Potter" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Sigles Français" %}
+						<a href="/Sigles_Français" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Définitions de mots" %}
+						<a href="/Définitions_de_mots" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Les spécialités culinaires" %}
+						<a href="/Les_spécialités_culinaires" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Séries TV : les simpson - partie 1" %}
+						<a href="/Séries_TV_les_simpson_partie_1" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Séries TV : les simpson - partie 2" %}
+						<a href="/Séries_TV_les_simpson_partie_2" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Séries TV : Stargate SG1" %}
+						<a href="/Séries_TV_Stargate_SG1" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Séries TV : NCIS" %}
+						<a href="/Séries_TV_NCIS" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Jeux de société" %}
+						<a href="/Jeux_de_société" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Programmation" %}
+						<a href="/Programmation" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+
+          {% if c == "Sigles informatiques" %}
+						<a href="/Sigles_informatiques" class="btn btn-lg shadow-lg p-5 rounded">
+							{{c}}
+						</a>
+					{% endif %}
+          
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+
+</form>{% endblock %}

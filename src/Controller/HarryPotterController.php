@@ -6,22 +6,25 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class HarryPotterController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/Harry_Potter', name: 'app_harry_potter')]
     public function index(): Response
     {
         $rowNo = 1;
-        $category = [];
+        $questions = [];
 
         if (($fp = fopen("/home/marius/delivery/my_quizz/QuizzApp/src/Controller/questions.csv", "r")) !== FALSE) {
             while (($row = fgetcsv($fp, 1000, ",")) !== FALSE) {
                 $num = count($row);
                 $rowNo++;
                 for ($c = 0; $c < $num; $c++) {
-                    if(str_contains($row[$c], ";;;")){
-                        if($row[$c] != ";;;"){
-                            array_push($category, utf8_encode(trim($row[$c], ";")));
+                    if($row[$c] == ";;;"){
+                        goto a;
+                    }else{
+                        $sep = explode(";", $row[$c]);
+                        foreach($sep as $i){
+                            echo utf8_encode($i."<br>");
                         }
                     }
                 }
@@ -29,9 +32,11 @@ class HomeController extends AbstractController
             fclose($fp);
         }
 
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
-            'category' => $category,
+        a:
+
+        return $this->render('harry_potter/index.html.twig', [
+            'controller_name' => 'HarryPotterController',
+            'questions' => $questions,
         ]);
     }
 }
