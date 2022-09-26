@@ -1,0 +1,24 @@
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="mb-3">
+            <a href="{{ path('app_home') }}" class="btn btn-dark">Home </a>
+            <a href="{{ path('app_login') }}" class="btn btn-dark">Login</a>
+                <h1 class="h3 mb-3 font-weight-normal">Please register</h1>
+                {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.email,{
+                        label: 'Email'
+                    }) }}
+                    {{ form_row(registrationForm.username,{
+                        label : 'Name'
+                    }) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+                    {{ form_row(registrationForm.agreeTerms) }}
+                    <button type="submit"class="btn btn-lg btn-primary">Register</button>
+                {{ form_end(registrationForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
