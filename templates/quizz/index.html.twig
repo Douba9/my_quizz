@@ -20,6 +20,12 @@
 	<a href="{{ path('app_user') }}" class="btn btn-dark">Profile</a>
 	<a href="{{ path('app_quizz') }}" class="btn btn-dark">Quizz</a>
 	<a href="{{ path('app_logout') }}" class="btn btn-dark">Logout</a>
+	{% if app.user %}
+		<div class="mb-3">
+			Vous êtes connecter en tant que
+			{{ app.user.userIdentifier }}
+		</div>
+	{% endif %}
 	<div class="example-wrapper">
 		choisir les quizz ici
 		        afficher l'historique des quizz ici
