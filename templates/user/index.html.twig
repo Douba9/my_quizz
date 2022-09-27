@@ -11,8 +11,10 @@
     <a href="{{ path('app_logout') }}" class="btn btn-dark">Logout</a>
 
 <div class="example-wrapper">
-    <h1>Hello insert username ! ✅</h1>
-
-    <p>page de profile</p>
+{% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}
+        </div>
+{% endif %}
 </div>
 {% endblock %}
