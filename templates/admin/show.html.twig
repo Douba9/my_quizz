@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Subscribe{% endblock %}
+{% block title %}Utilisateur{% endblock %}
 
 {% block body %}
-    <h1>Subscribe</h1>
+    <h1>Utilisateurs</h1>
 
     <table class="table">
         <tbody>
@@ -38,9 +38,9 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_admin_index') }}">back to list</a>
+    <a href="{{ path('app_admin_index') }}">Retour à la liste</a>
 
-    <a href="{{ path('app_admin_edit', {'id': subscribe.id}) }}">edit</a>
+    <a href="{{ path('app_admin_edit', {'id': subscribe.id}) }}">Modifier</a>
 
     {{ include('admin/_delete_form.html.twig') }}
 {% endblock %}
