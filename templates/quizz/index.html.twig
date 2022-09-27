@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profile!
+{% block title %}Quizz!
 {% endblock %}
 
 {% block body %}
@@ -20,18 +20,8 @@
 	<a href="{{ path('app_user') }}" class="btn btn-dark">Profile</a>
 	<a href="{{ path('app_quizz') }}" class="btn btn-dark">Quizz</a>
 	<a href="{{ path('app_logout') }}" class="btn btn-dark">Logout</a>
-	{% if app.user %}
-		<div class="mb-3">
-			Vous êtes connecter en tant que
-			{{ app.user.userIdentifier }}
-		</div>
-	{% endif %}
-
 	<div class="example-wrapper">
-		<br>
-		<p>Nom : <input type="text" placeholder="{{ app.user.username }}"></input></p>
-		<p>E-mail : <input type="email" placeholder="{{ app.user.email }}"></input></p>
-		<p>Mot de passe :<input type="password" placeholder="{{ app.user.password }}"></input></p>
-		<button type="submit" class="btn btn-lg btn-primary">Modifier votre profile</button>
+		choisir les quizz ici
+		        afficher l'historique des quizz ici
 	</div>
 {% endblock %}

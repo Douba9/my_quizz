@@ -1,17 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Home!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
 
-<div class="example-wrapper">
-    <a href="{{ path('app_register') }}" class="btn btn-dark">Sign up </a>
-    <a href="{{ path('app_login') }}" class="btn btn-dark">Login</a>
-    <h1>Hello {{ controller_name }}! ✅</h1>
+	<div class="example-wrapper">
+		<a href="{{ path('app_register') }}" class="btn btn-dark">Inscription</a>
+		<a href="{{ path('app_login') }}" class="btn btn-dark">Connexion</a>
+		<a href="{{ path('app_quizz') }}" class="btn btn-dark">Quizz</a>
+		<a href="{{ path('app_user') }}" class="btn btn-dark">Profile</a>
+		<a href="{{ path('app_logout') }}" class="btn btn-dark">Logout</a>
+		<h1>Hello
+			{{ controller_name }}! ✅</h1>
 
-    <p>acceuil</p>
-{% endblock %}
+		<p>acceuil</p>
+	{% endblock %}
