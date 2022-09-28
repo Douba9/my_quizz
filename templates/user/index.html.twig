@@ -36,5 +36,5 @@
 		<button type="submit" class="btn btn-lg btn-primary">Modifier votre profile</button>
 	</div>
 
-	<p>Pour modifier votre profile clique par {# <a href="{{ path('app_user_edit') }}" class="btn btn-dark">ICI</a> #}</p>
+	<p>Pour modifier votre profile clique par <a href="{{ path('app_user_edit',{username : app.user.username}) }}" class="btn btn-dark">ICI</a></p>
 {% endblock %}
