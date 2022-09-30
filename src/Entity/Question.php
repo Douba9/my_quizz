@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+<<<<<<< HEAD
 use App\Repository\QuestionRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -47,4 +48,40 @@ class Question
 
         return $this;
     }
+=======
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Question
+ *
+ * @ORM\Table(name="question")
+ * @ORM\Entity
+ */
+class Question
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="id_categorie", type="integer", nullable=true)
+     */
+    private $idCategorie;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="question", type="string", length=255, nullable=true)
+     */
+    private $question;
+
+
+>>>>>>> ff542401800ce468be293d0d3d3c8a465da8dc40
 }

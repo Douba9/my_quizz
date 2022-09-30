@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+<<<<<<< HEAD
 use App\Repository\ReponseRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -62,4 +63,47 @@ class Reponse
 
         return $this;
     }
+=======
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Reponse
+ *
+ * @ORM\Table(name="reponse")
+ * @ORM\Entity
+ */
+class Reponse
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var int|null
+     *
+     * @ORM\Column(name="id_question", type="integer", nullable=true)
+     */
+    private $idQuestion;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="reponse", type="string", length=255, nullable=true)
+     */
+    private $reponse;
+
+    /**
+     * @var bool|null
+     *
+     * @ORM\Column(name="reponse_expected", type="boolean", nullable=true)
+     */
+    private $reponseExpected;
+
+
+>>>>>>> ff542401800ce468be293d0d3d3c8a465da8dc40
 }

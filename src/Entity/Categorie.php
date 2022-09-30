@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+<<<<<<< HEAD
 use App\Repository\CategorieRepository;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -32,4 +33,33 @@ class Categorie
 
         return $this;
     }
+=======
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Categorie
+ *
+ * @ORM\Table(name="categorie")
+ * @ORM\Entity
+ */
+class Categorie
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $name;
+
+
+>>>>>>> ff542401800ce468be293d0d3d3c8a465da8dc40
 }
